@@ -1,4 +1,5 @@
 import {useState, useEffect} from "react"
+import styles from "./Meme.module.css"
 
 export default function Meme() {
     const [meme, setMeme] = useState({
@@ -7,16 +8,6 @@ export default function Meme() {
         randomImage: "http://i.imgflip.com/1bij.jpg" 
     })
     const [allMemes, setAllMemes] = useState([])
-    
-    /**
-    useEffect takes a function as its parameter. If that function
-    returns something, it needs to be a cleanup function. Otherwise,
-    it should return nothing. If we make it an async function, it
-    automatically retuns a promise instead of a function or nothing.
-    Therefore, if you want to use async operations inside of useEffect,
-    you need to define the function separately inside of the callback
-    function, as seen below:
-    */
     
     useEffect(() => {
         async function getMemes() {
@@ -46,11 +37,11 @@ export default function Meme() {
     
     return (
         <main>
-            <div className="form">
+            <div className={styles.form}>
                 <input 
                     type="text"
                     placeholder="Top text"
-                    className="form--input"
+                    className={styles.form_input}
                     name="topText"
                     value={meme.topText}
                     onChange={handleChange}
@@ -58,22 +49,22 @@ export default function Meme() {
                 <input 
                     type="text"
                     placeholder="Bottom text"
-                    className="form--input"
+                    className={styles.form_input}
                     name="bottomText"
                     value={meme.bottomText}
                     onChange={handleChange}
                 />
                 <button 
-                    className="form--button"
+                    className={styles.form_button}
                     onClick={getMemeImage}
                 >
                     Get a new meme image 🖼
                 </button>
             </div>
             <div className="meme">
-                <img src={meme.randomImage} className="meme--image" />
-                <h2 className="meme--text top">{meme.topText}</h2>
-                <h2 className="meme--text bottom">{meme.bottomText}</h2>
+                <img src={meme.randomImage} className={styles.meme_image} />
+                <h2 className={`${styles.meme_text} ${styles.top}`}>{meme.topText}</h2>
+                <h2 className={`${styles.meme_text} ${styles.bottom}`}>{meme.bottomText}</h2>
             </div>
         </main>
     )
