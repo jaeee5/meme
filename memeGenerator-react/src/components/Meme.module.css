@@ -29,8 +29,8 @@
 }
 
 .meme_image {
-    max-width: 100%;
-    border-radius: 3px;
+    width: 100%;
+    border-radius: 5px;
 }
 
 .meme_text {
