@@ -1,5 +1,5 @@
 import {useState, useEffect} from "react"
-import styles from "./Meme.module.css"
+import styles from "./Meme.module.scss"
 
 export default function Meme() {
     const [meme, setMeme] = useState({
@@ -61,7 +61,7 @@ export default function Meme() {
                     Get a new meme image 🖼
                 </button>
             </div>
-            <div className="meme">
+            <div className={styles.meme}>
                 <img src={meme.randomImage} className={styles.meme_image} />
                 <h2 className={`${styles.meme_text} ${styles.top}`}>{meme.topText}</h2>
                 <h2 className={`${styles.meme_text} ${styles.bottom}`}>{meme.bottomText}</h2>
