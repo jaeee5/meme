@@ -4,7 +4,7 @@
     display: flex;
     align-items: center;
     height: 65px;
-    background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
+    background: linear-gradient(90deg, #2c063a 1.18%, #5a0e76 100%);
     color: white;
     padding: 20px;
 }
@@ -23,3 +23,4 @@
     font-size: 0.75rem;
     font-weight: 500;
 }
+
